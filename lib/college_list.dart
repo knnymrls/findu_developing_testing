@@ -20,11 +20,11 @@ class _CollegesListState extends State<CollegesList> {
   }
 
   Future<void> loadData() async {
-    if (this.mounted) {
+    if (mounted) {
       setState(() => loading = true);
       // Directly fetching colleges without using Timer for simplicity
       final fetchedColleges = await fetchColleges();
-      if (this.mounted) {
+      if (mounted) {
         setState(() {
           colleges = fetchedColleges;
           loading = false;
