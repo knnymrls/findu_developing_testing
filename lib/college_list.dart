@@ -1,4 +1,7 @@
 import 'package:findu_developing_testing/hooks/college_api.dart';
+import 'package:findu_developing_testing/mocks/student_mock.dart';
+import 'package:findu_developing_testing/models/match.dart';
+import 'package:findu_developing_testing/models/user.dart';
 import 'package:findu_developing_testing/pages/college_page.dart';
 import 'package:flutter/material.dart';
 import 'package:findu_developing_testing/models/college.dart';
@@ -49,13 +52,14 @@ class _CollegesListState extends State<CollegesList> {
 
 // Updated ListTile rendering function
 Widget _renderCollegeListTile(BuildContext context, College college) {
+  User user = MockUser.fetch(0);
+  final int matchScore = calculateMatchScore(user, college);
+
   return ListTile(
-    leading: CircleAvatar(
-      backgroundColor: Colors.red[400],
-      child: Icon(
-        Icons.school,
-        color: Colors.white,
-      ),
+    leading: Text(
+      '$matchScore%',
+      style: GoogleFonts.openSans(
+          color: Colors.black, fontWeight: FontWeight.w400, fontSize: 16),
     ),
     title: Text(
       college.name,
