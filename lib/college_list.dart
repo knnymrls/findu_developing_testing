@@ -26,7 +26,7 @@ class _CollegesListState extends State<CollegesList> {
     if (mounted) {
       setState(() => loading = true);
       // Directly fetching colleges without using Timer for simplicity
-      final fetchedColleges = await fetchColleges();
+      final fetchedColleges = await fetchAllColleges(MockUser.fetch(0));
       if (mounted) {
         setState(() {
           colleges = fetchedColleges;

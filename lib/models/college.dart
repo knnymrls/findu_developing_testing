@@ -10,6 +10,7 @@ class College {
   final double? admissionRate;
   final int? averageSAT; // Made nullable for demonstration
   final int? size;
+  int? matchScore;
 
   College(
       {required this.name,
@@ -17,7 +18,8 @@ class College {
       required this.state,
       this.admissionRate,
       this.averageSAT,
-      this.size});
+      this.size,
+      this.matchScore});
 
   // Using getters to return a default value if the field is null
   String get admissionRateDisplay => admissionRate?.toString() ?? 'N/A';

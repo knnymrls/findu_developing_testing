@@ -13,6 +13,7 @@ College _$CollegeFromJson(Map<String, dynamic> json) => College(
       admissionRate: (json['admissionRate'] as num?)?.toDouble(),
       averageSAT: json['averageSAT'] as int?,
       size: json['size'] as int?,
+      matchScore: json['matchScore'] as int?,
     );
 
 Map<String, dynamic> _$CollegeToJson(College instance) => <String, dynamic>{
@@ -22,4 +23,5 @@ Map<String, dynamic> _$CollegeToJson(College instance) => <String, dynamic>{
       'admissionRate': instance.admissionRate,
       'averageSAT': instance.averageSAT,
       'size': instance.size,
+      'matchScore': instance.matchScore,
     };
